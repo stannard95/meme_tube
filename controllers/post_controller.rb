@@ -16,6 +16,7 @@ class PostsController < Sinatra::Base
 
   # returns all the meme videos
 	get '/memes' do
+    erb :"posts/index"
 
 	end
 
