@@ -1,3 +1,5 @@
+ require 'pg'
+
 class Post
 
 	attr_accessor :id, :title, :description, :url, :genre
