@@ -1,3 +1,14 @@
-body {
-	background-color: grey;
+
+.videos {
+	border: solid black 2px;
+}
+
+#boi {
+	width: 10px;
+	height: 10px;
+	background-color: red;
+}
+
+h1 {
+	color: white;
 }

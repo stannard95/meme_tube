@@ -10,64 +10,65 @@ class PostsController < Sinatra::Base
 
 
   # creates new meme video and adds to database
-	post '/memes' do
+	post '/posts' do
 		new_meme = Post.new
 		new_meme.title = params[:title]
 		new_meme.description = params[:description]
 		new_meme.url = params[:url]
-		new_meme.genre = param[:genre]
+		new_meme.genre = params[:genre]
 		new_meme.save
-		redirect "/memes"
+		redirect "/posts"
 
 	end
 
+	# directs to 'make meme video' page
+
+	get '/posts/new' do
+		erb :"posts/new"
+	end	
+
   # returns all the meme videos
-	get '/memes' do
+	get '/posts' do
 	@posts = Post.all
     erb :"posts/index"
 
 	end
 
-  # directs to 'make meme video' page
-	get '/memes/new' do
-		erb :"memes/new"
-		
-	end
-
-
-  # directs to select meme video page
-	get '/memes/:id' do
-		@post = Post.find(params[:id])
-		erb :"memes/show"
-	  
-	end
-
-	# directs to selected meme video page for editing
-	get "/memes/:id/edit" do
-		@post = Post.find(params[:id])
-  		erb :"memes/edit"
-		
-	end
-
   # Edits values of the meme video
-	put "/memes/:id" do
+	put "/posts/:id" do
 	  id = params[:id]
       meme = Post.find(params[:id])
       meme.title = params[:title]
 	  meme.description = params[:description]
 	  meme.url = params[:url]
-	  meme.genre = param[:genre]
-      post.save
+	  meme.genre = params[:genre]
+      meme.save
 
-      redirect "/memes/#{meme.id}"
+      redirect "/posts"
 	
 	end
 
+ #  # directs to select meme video page
+	# get '/posts/:id' do
+	# 	@meme = Post.find(params[:id])
+	# 	erb :"posts/show"
+	  
+	# end
+
+	# directs to selected meme video page for editing
+	get "/posts/:id/edit" do
+		@meme = Post.find(params[:id])
+  		erb :"posts/edit"
+		
+	end
+
+ 
+
   # deletes meme video
-  delete "/memes/:id" do
-  	id=params[:id]
+  delete "/posts/:id" do
+  	id = params[:id]
     Post.destroy(id)
-    redirect "/memes"
+    redirect "/posts"
    
   end
 

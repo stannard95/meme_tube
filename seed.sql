@@ -9,8 +9,7 @@ CREATE TABLE post (
 
 );
 
-INSERT INTO post (title, description, url, genre) VALUES ('Meme 1', 'meme 1 is great', 'www.meh.com', 'comedy');
-INSERT INTO post (title, description, url, genre) VALUES ('Meme 2', 'meme 2 is great', 'www.meh.com', 'comedy');
-INSERT INTO post (title, description, url, genre) VALUES ('Meme 3', 'meme 3 is great', 'www.meh.com', 'comedy');
-INSERT INTO post (title, description, url, genre) VALUES ('Meme 4', 'meme 4 is great', 'www.meh.com', 'comedy');
-INSERT INTO post (title, description, url, genre) VALUES ('Meme 5', 'meme 5 is great', 'www.meh.com', 'comedy');
+INSERT INTO post (title, description, url, genre) VALUES ('Meme 1', 'meme 1 is great', 'pxFZYIeUuyg', 'comedy');
+INSERT INTO post (title, description, url, genre) VALUES ('Meme 2', 'meme 2 is great', 'CbeDksV2OS4', 'comedy');
+INSERT INTO post (title, description, url, genre) VALUES ('Meme 3', 'meme 3 is great', 'zJqEkLpeIz0', 'comedy');
+

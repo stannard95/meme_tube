@@ -1,16 +1,26 @@
+
 <h1>MemeTube</h1>
+<a href="/posts/new">Create a new video</a>
+<br>
 
-<% @posts.each do |post| %>
+<div class="videos">
+	<% @posts.each do |post| %>
 
-	<h2>Post Tile: <%= post.title %></h2>
-	<h2>Post Body: <%= post.description %></h2>
+		<iframe width=500 height= 350
+		src="https://www.youtube.com/embed/<%= post.url %>" frameborder="0" allowfullscreen></iframe>
+		<h2>Title: <%= post.title %></h2>
+		<h2>Description: <%= post.description %></h2>
+		<h2>Genre: <%= post.genre %></h2>
 
-	<a href="/memes/<%=  post.id %>">View</a>
-	<a href="/memes/<%= post.id %>/edit">Edit</a>
 
-	<form action="/posts/<%= post.id %>" method="POST">
-		<input type="hidden" name="_method" value="DELETE">
-		<input type="submit" value="Delete">
-	</form>
+		<a href="/posts/<%=  post.id %>">View</a>
+		<a href="/posts/<%= post.id %>/edit">Edit</a>s
 
-<% end %>
+
+		<form action="/posts/<%= post.id %>" method="POST">
+			<input type="hidden" name="_method" value="DELETE">
+			<input type="submit" value="Delete">
+		</form>
+
+	<% end %>
+</div>

@@ -45,8 +45,8 @@ class Post
 	def save
 		conn = Post.open_connection
 		if (!self.id)
-			sql = "INSERT INTO post (title, description, url, genre) VALUES (''#{self.title}', #{self.description}', 
-			#{self.url}', #{self.genre}')"
+			sql = "INSERT INTO post (title, description, url, genre) VALUES ('#{self.title}', '#{self.description}', 
+			'#{self.url}', '#{self.genre}')"
 		else
 			sql = "UPDATE post SET title = '#{self.title}', description = '#{self.description}',
 			url = '#{self.url}', genre = '#{self.genre}' WHERE id = #{self.id}"
