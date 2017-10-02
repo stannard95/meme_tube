@@ -3,14 +3,12 @@
 <a href="/posts/new">Create a new video</a>
 <br>
 
-<div class="videos">
-	<% @posts.each do |post| %>
 
-		<iframe width=500 height= 350
+	<% @posts.each do |post| %>
+	<div class="videos">
+		<iframe width=400 height= 250
 		src="https://www.youtube.com/embed/<%= post.url %>" frameborder="0" allowfullscreen></iframe>
 		<h2>Title: <%= post.title %></h2>
-		<h2>Description: <%= post.description %></h2>
-		<h2>Genre: <%= post.genre %></h2>
 
 
 		<a href="/posts/<%=  post.id %>">View</a>
@@ -21,6 +19,6 @@
 			<input type="hidden" name="_method" value="DELETE">
 			<input type="submit" value="Delete">
 		</form>
-
+	</div>
 	<% end %>
-</div>
+

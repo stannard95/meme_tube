@@ -48,12 +48,12 @@ class PostsController < Sinatra::Base
 	
 	end
 
- #  # directs to select meme video page
-	# get '/posts/:id' do
-	# 	@meme = Post.find(params[:id])
-	# 	erb :"posts/show"
+  # directs to select meme video page
+	get '/posts/:id' do
+		@meme = Post.find(params[:id])
+		erb :"posts/show"
 	  
-	# end
+	end
 
 	# directs to selected meme video page for editing
 	get "/posts/:id/edit" do
